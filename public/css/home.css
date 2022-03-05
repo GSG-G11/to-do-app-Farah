@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.title{
+    margin:2% 40% 3% 40%;
+}
+.Filtercontainer{
+    margin-top: 80px;
+    padding: 0 15%;
+    width: 50%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;  
+}
+.EDITcontainer{
+   padding-top: 30px;
+   padding-left: 20px;
+    width: 50vw;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+   
+}
+.container{
+    padding: 0 15%;
+    width: 60%;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    
+}
+.editSection{
+    top:250px;
+    position: fixed;
+    left: 20vw;
+    margin-top: 50px;
+    width: 55vw;
+    height: 100px;
+    border:1px solid #000;
+    background-color: #DFDEDD;
+    display: none;
+}
+#task{
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    border:1px solid #000;
+
+}
+#editTask{
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    border:1px solid #000;
+
+}
+#editDate{
+    width: 150px;
+    height: 30px;
+}
+#date{
+    width: 150px;
+}
+#editSubject{
+    width: 150px; 
+    height: 35px;   
+}
+#subject{
+    width: 150px;
+}
+#subjectfilter{
+    width: 150px;
+    height: 40px;
+}
+#btnfilter{
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(98, 98, 192);
+    color:#fff;
+}
+#editBtn{
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(98, 98, 192);
+    color:#fff; 
+    height: 40px;  
+}
+#btn{
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(98, 98, 192);
+    color:#fff;
+}
+.displayTask{
+    margin:3% 16% 0 16%;
+    padding: 10px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(98, 98, 192);
+    color: #fff;
+    height: 40px;
+    border-radius: 5px;
+}
+.displayTask .btn{
+    color: #fff;
+    border: none;
+     background-color: rgb(98, 98, 192);
+
+}

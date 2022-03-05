@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/home.css">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 class="title">do tasks</h1>
+    </div>
+    <section>
+    
+       
+        <div>
+           
+            <form  class="container">
+                
+                <input type="text" name="task" value="" id="task" placeholder="add you task" required>
+                <input type="date" id="date" name="date" value="" min="2022-03-10" max="2022-12-31">
+                <select name="subject" id="subject">
+                    <option value="All">All</option>
+                    <option value="calculus"> calculus</option>
+                    <option value="cs"> cs</option>
+                    <option value="physics">physics</option>
+                    <option value="Java">java</option>
+
+                </select>
+                <button type="submit" id="btn"> add</button>
+                
+            </form>
+           
+        </div>
+        <div>
+            <form  class="Filtercontainer">
+                
+               
+        
+                <select name="subject" id="subjectfilter">
+                    <option value="All">All</option>
+                    <option value="calculus"> calculus</option>
+                    <option value="cs"> cs</option>
+                    <option value="physics">physics</option>
+                    <option value="Java">java</option>
+
+                </select>
+                <select name="sort" id="sort">
+                    <option value="newer">sort by newer</option>
+                    <option value="older"> sort by older</option>
+                   
+
+                </select>
+                <button type="submit" id="btnfilter"> add</button>
+                
+            </form>
+           
+        </div>
+        <div class="tasks">
+            
+        </div>
+        <div class="editSection">
+           
+            <form  class="EDITcontainer">
+                
+                <input type="text" name="task" value="" id="editTask" placeholder="edit you task" required>
+                <input type="date" id="editDate" name="date" value="" min="2022-03-10" max="2022-12-31">
+                <select name="subject" id="editSubject">
+                    <option value="All">All</option>
+                    <option value="calculus"> calculus</option>
+                    <option value="cs"> cs</option>
+                    <option value="physics">physics</option>
+                    <option value="Java">java</option>
+
+                </select>
+                <button type="submit" id="editBtn"> EDIT</button>
+                
+            </form>
+           
+        </div>
+    </section>
+    <script src="../js/fetch.js"></script>
+    <script src="../js/home.js"></script>
+</body>
+</html>

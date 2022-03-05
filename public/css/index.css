@@ -1,0 +1,30 @@
+.section{
+  
+   margin: 15% 30%;
+}
+.section p{
+    margin: 0 35% 10% 25%;
+    font-size: 50px;
+}
+.input{
+    margin-left: 15%;
+}
+#name{
+    width: 250px;
+    height: 40px;
+    background-color: rgb(98, 98, 192);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+::placeholder {
+    color: #fff;
+   
+}
+#btn{
+    border: none;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(58, 161, 58);
+    border-radius: 5px;
+}
