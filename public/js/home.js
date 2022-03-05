@@ -4,15 +4,19 @@ const tasks = document.querySelector('.tasks')
 const addBtn = document.querySelector('#btn')
 const btnfilter = document.querySelector('#btnfilter')
 const container = document.querySelector('.container')
-const Filtercontainer = document.querySelector('.Filtercontainer')
-const EDITcontainer = document.querySelector('.EDITcontainer')
 const editSection = document.querySelector('.editSection')
 const editTask = document.querySelector('#editTask')
 const editDate = document.querySelector('#editDate')
 const editSubject = document.querySelector('#editSubject')
 const editBtn = document.querySelector('#editBtn')
-const userId =localStorage.getItem('userId')
+const userId = localStorage.getItem('userId')
+const {forms} = document;
 
+[...forms].forEach(ele=>{
+    ele.addEventListener('click', (e) => {
+        e.preventDefault();
+    })
+})
 btnfilter.addEventListener('click', (e) => {
 
     let option = e.target.parentElement.subject.value;
@@ -21,9 +25,9 @@ btnfilter.addEventListener('click', (e) => {
         getData(`/tasks`).then(data => mapData(data));
     }
     postData({ option, sort }, "POST", '/fitlerTask').then(data => {
-  
+
         tasks.textContent = "";
-   
+
         mapData(data);
     })
 })
@@ -31,17 +35,9 @@ addBtn.addEventListener('click', (e) => {
     let value = e.target.parentElement.task.value;
     let date = e.target.parentElement.date.value;
     let option = e.target.parentElement.subject.value;
-    postData({userId, value, date, option }, "POST", '/task').then(data => renderDom(data[0]))
+    postData({ userId, value, date, option }, "POST", '/task').then(data => renderDom(data[0]))
 })
-Filtercontainer.addEventListener('click', (e) => {
-    e.preventDefault();
-})
-container.addEventListener('click', (e) => {
-    e.preventDefault();
-})
-EDITcontainer.addEventListener('click', (e) => {
-    e.preventDefault();
-})
+
 const mapData = (data) => {
 
     data.map(task => renderDom(task))
@@ -74,7 +70,7 @@ const renderDom = (object) => {
     btn.addEventListener('click', del)
 }
 const displayEditSection = (parent) => {
-   
+
     editSection.style.display = 'flex'
     const id = parent.parentElement.dataset.id;
 
@@ -88,7 +84,7 @@ const displayEditSection = (parent) => {
         const content = editTask.value;
         const type = editSubject.value;
         const date = editDate.value;
-      
+
         postData({ id, content, type, date }, 'PUT', '/task').then((data) => {
 
 
