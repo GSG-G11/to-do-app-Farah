@@ -7,7 +7,7 @@ const postUser=(req,res)=>{
            
             if (response.rows.length > 0){
              
-                getUser(req.body).then(response=>res.json(response.rows)).catch(()=>res.json({message:'error'}))  
+                getUser(req.body).then(response=>console.log(response.rows)).catch(()=>res.json({message:'error'}))  
             }
             else{
                 postUserToDB(req.body).then(response=>res.json(response.rows)).catch(()=>res.json({message:'error'}))  
