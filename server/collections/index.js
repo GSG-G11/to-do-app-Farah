@@ -6,6 +6,7 @@ const deleteTask=require('./deleteTask')
 const editTask=require('./editTask.js')
 const newData=require('./filteredData')
 const postUser=require('./postUser')
+const fitlerAllTask=require('./fitlerAllTask')
 module.exports={
     fetchUser,
     fetchTask,
@@ -14,6 +15,8 @@ module.exports={
     deleteTask,
     editTask,
     newData,
-    postUser
+    postUser,
+    fitlerAllTask
+    
 
 }

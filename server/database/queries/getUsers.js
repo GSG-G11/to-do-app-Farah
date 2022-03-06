@@ -1,5 +1,6 @@
 const dbconnection=require('../config/connection')
-const getUser=()=>{
-    return dbconnection.query('SELECT * FROM users');
+const getUser=(body)=>{
+
+    return dbconnection.query(`SELECT * FROM users where username='${body.value}'`);
 }
 module.exports=getUser;

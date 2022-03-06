@@ -9,6 +9,6 @@ const postData=(data,method,url)=>{
             'Content-type':'application/json'
         },
         body:JSON.stringify(data)
-    }).then(res=>res.json())
+    }).then(res=>(res.json()))
     .catch(err=>console.log(err))
 }

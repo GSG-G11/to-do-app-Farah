@@ -10,9 +10,9 @@ const editDate = document.querySelector('#editDate')
 const editSubject = document.querySelector('#editSubject')
 const editBtn = document.querySelector('#editBtn')
 const userId = localStorage.getItem('userId')
-const {forms} = document;
+const { forms } = document;
 
-[...forms].forEach(ele=>{
+[...forms].forEach(ele => {
     ele.addEventListener('click', (e) => {
         e.preventDefault();
     })
@@ -21,15 +21,20 @@ btnfilter.addEventListener('click', (e) => {
 
     let option = e.target.parentElement.subject.value;
     let sort = e.target.parentElement.sort.value;
-    if (option === "All") {
-        getData(`/tasks`).then(data => mapData(data));
+    if (option === "All"){
+        postData({ sort }, "POST", '/fitlerAllTask').then(data =>{
+            tasks.textContent = "";
+            mapData(data)});
     }
-    postData({ option, sort }, "POST", '/fitlerTask').then(data => {
+    else{
+        postData({ option, sort }, "POST", '/fitlerTask').then(data => {
 
-        tasks.textContent = "";
-
-        mapData(data);
-    })
+            tasks.textContent = "";
+    
+            mapData(data);
+        })
+    }
+   
 })
 addBtn.addEventListener('click', (e) => {
     let value = e.target.parentElement.task.value;
@@ -40,15 +45,20 @@ addBtn.addEventListener('click', (e) => {
 
 const mapData = (data) => {
 
-    data.map(task => renderDom(task))
+    data.map(task =>{ 
+       
+        renderDom(task)
+    }
+    )
 }
 window.onload = () => {
     editSection.style.display = 'none'
-    getData(`/tasks/${userId}`).then(data => mapData(data));
+
+    getData(`/tasks/${userId}`).then(data =>mapData(data));
 }
 const renderDom = (object) => {
 
-
+        console.log(object)
     const task = document.createElement('div')
     task.className = 'displayTask'
     task.setAttribute('data-id', object.id)
