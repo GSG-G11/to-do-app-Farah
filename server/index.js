@@ -1,4 +1,5 @@
 const app =require('./app')
-app.listen(4000,()=>{
+const port = app.get('port');
+app.listen(port,()=>{
     console.log('I ammmlistening at localhost:4000')
 })
