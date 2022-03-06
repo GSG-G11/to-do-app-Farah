@@ -1,6 +1,6 @@
 require('env2')('config.env');
 const { Pool }=require('pg');
-const DB_URL=process.env.DB_URL
+
 let dbURL="";
 let {NODE_ENV,DEV_DB_URL,DATABASE_URL,TEST_DB_URL}=process.env;
 if(NODE_ENV==="dev"){
@@ -16,7 +16,7 @@ else if (NODE_ENV === "production"){
     throw new Error('invalid url')
 }
 const options={
-    connectionString:DB_URL,
+    connectionString:dbURL,
     ssl: {
         rejectUnauthorized: false,
       },
