@@ -17,7 +17,7 @@ else if (NODE_ENV === "production"){
 }
 const options={
     connectionString:DB_URL,
-    ssl: {     rejectUnauthorized: false,   },
+    ssl: {     rejectUnauthorized: false,   }
 }
 const dbconnection =new Pool(options);
 module.exports=dbconnection;
