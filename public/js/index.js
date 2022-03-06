@@ -10,7 +10,7 @@ btn.addEventListener('click',(e)=>{
     let value = e.target.parentElement.name.value;
     postData({value}, "POST", '/user')
     .then(data => goToHome((data[0].id)))
-    .catch((error)=>swal("name is already use chooser another one"))
+    .catch((error)=>console.log(error))
 
 })
 info.addEventListener('click', (e) => {
