@@ -40,6 +40,7 @@ addBtn.addEventListener('click', (e) => {
     let value = e.target.parentElement.task.value;
     let date = e.target.parentElement.date.value;
     let option = e.target.parentElement.subject.value;
+    console.log(date)
     postData({ userId, value, date, option }, "POST", '/task').then(data => renderDom(data[0]))
 })
 
@@ -87,13 +88,18 @@ const displayEditSection = (parent) => {
 
     editTask.value = parent.parentElement.childNodes[0].textContent
     editSubject.value = parent.parentElement.childNodes[2].textContent
-    editDate.value = parent.parentElement.childNodes[1].textContent
-
+    let date = parent.parentElement.childNodes[1].textContent
+    let value = date.split('T')[0]
+    console.log(value)
+    editDate.value =value
+   
+    console.log('dateInputVALUE', editDate.value)
     editBtn.addEventListener('click', () => {
 
         const content = editTask.value;
         const type = editSubject.value;
         const date = editDate.value;
+        console.log('the date',date)
 
         postData({ id, content, type, date }, 'PUT', '/task').then((data) => {
 
